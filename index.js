@@ -14,13 +14,20 @@ const card = require('./models/Card')
 const cardleft = require('./models/Cardleft')
 const cardsUpdate = require('./routers/cardsUpdate');
 
+/////////////////////////////////////////////////////////      restarting the server
+
+const job = require('./routers/cron');
+job.start();
+
+////////////////////////////////////////////////////////
+
 const app = express();
 
 const dbName = 'game';
 mongoose.connect(mUrl, {
   dbName,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+  //useNewUrlParser: true,
+  //useUnifiedTopology: true
 });
 
 // call when db connect
