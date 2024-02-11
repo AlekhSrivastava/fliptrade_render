@@ -1,7 +1,7 @@
 // Cron job to hit endpoint every 14 sec to keep backend alive always
 const cron = require('cron');
 const https = require('https');
-const backendUrl = 'provide_backend_api_endpoint_that_is_provided_by_rendor';
+const backendUrl = 'https://fliptradebackend.onrender.com';
 const job = new cron.CronJob('*/14 * * * *', function () {
     // This function will be executed every 14 minutes.
     console.log('Restarting server');
